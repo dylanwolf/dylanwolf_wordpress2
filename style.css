@@ -1,0 +1,543 @@
+/*
+Theme Name: DylanWolf.com 2.0
+Author: Dylan Wolf
+Version: 2.0.0
+*/
+
+/* ================================================================================
+Reset
+================================================================================ */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    font-family: 'Titillium Web', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 1.5em;
+    background-color: #213043;
+}
+
+strong {
+    font-weight: bold;
+}
+
+h1, h2 {
+    font-family: 'Suez One', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+}
+h1:first-child { margin-top: 0; }
+
+.post-content h1 { font-size: 24px; }
+.post-content h2 { font-size: 20x; }
+.post-content h3 { font-size: 16px; font-family: 'Suez One', Verdana, Geneva, Tahoma, sans-serif; }
+.post-content h4 { font-size: 12px; font-family: 'Suez One', Verdana, Geneva, Tahoma, sans-serif; }
+
+h3 {
+    font-family: 'Suez One', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+}
+h2:first-child, h3:first-child { margin-top: 0; }
+
+p {
+    margin-top: 1em;
+}
+p:first-of-type { margin-top: 0;}
+
+ul {
+    list-style-type: square;
+    margin-top: 1em;
+    margin-left: 2em;
+}
+
+ul li {
+    padding-left: 0.5em;
+}
+ul li:first-of-type { margin-top: 0; }
+ul li ul {
+    margin-bottom: 1em;
+}
+
+/* ================================================================================
+Variables
+================================================================================ */
+
+
+/* ================================================================================
+General styles
+================================================================================ */
+
+.cursor {
+    cursor: pointer;
+}
+
+a:link, a:visited {
+    color: #3399ff;
+}
+
+a:hover {
+    color: #66ccff;
+}
+
+.screenshot {
+    cursor: pointer;
+}
+
+.screenshot-right {
+    border: 1px solid #69c;
+    float: right;
+    margin: 0 1em 1em 1em;
+    width: 300px;
+}
+
+h1 a:link, h1 a:visited, h1 a:active,
+h2 a:link, h2 a:visited, h2 a:active {
+    color: #fff;
+}
+
+h1 a:hover, h2 a:hover {
+    color: #66ccff;
+}
+
+/* ================================================================================
+Main layout
+================================================================================ */
+
+.main-layout {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.logo {
+    font-family: 'Suez One', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center; 
+}
+
+.logo img { margin-right: 12px; }
+
+.logo a:link, .logo a:visited, .logo a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.menu-panel {
+    flex-basis: 20em;
+    min-width: 20em;
+    color: #fff;
+    background-color: #112033;
+    padding: 3em;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.content-panel {
+    flex-grow: 1;
+    color: #fff;
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-collection {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+/* ================================================================================
+Tabs
+================================================================================ */
+
+.tab-panel {
+    margin-bottom: 1em;
+    border-width: 0 0 12px 0;
+    border-style: solid;
+    border-image: linear-gradient(
+        to bottom,
+        #011023 0%, #213043 100%
+    ) 0 0 100% 0;
+}
+
+.tab-flex {
+    display: flex;
+    flex-direction: row;
+    animation-name: show-tabs;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+}
+
+.tab-panel .tab {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0.5em;
+    border-bottom: 1px solid #999;
+}
+
+.tab-panel .tab.active {
+    border-bottom: 3px solid #ccc;
+    font-weight: bold;
+}
+
+.tab a:link, .tab a:visited, .tab:active {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.tab a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ================================================================================
+Menu
+================================================================================ */
+
+.menu-panel .menu-flex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+}
+
+.menu-panel .menu-flex .menu-item {
+    margin-top: 3em;
+}
+
+.menu-item a:link, .menu-item a:visited, .menu-item a:active {
+    color: #ccc;
+    text-decoration: none;
+} 
+
+.menu-item a:hover {
+    color: #fff;
+    text-decoration: none;
+} 
+
+.menu-panel .menu-flex .menu-item.active a {
+    padding-bottom: 0.25em;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.tag-cloud {
+    margin-top: 3em;
+    border: 1px solid #ccc;
+}
+
+.tag-cloud a:link, .tag-cloud a:visited, .tag-cloud a:active,
+.social-icons a:link, .social-icons a:visited, .social-icons a:active {
+    color: #ccc;
+    text-decoration: none;
+} 
+
+.tag-cloud a:hover, .social-icons a:hover {
+    color: #fff;
+    text-decoration: none;
+} 
+
+.social-icons {
+    margin-top: 1em;
+}
+
+
+/* ================================================================================
+Content
+================================================================================ */
+
+.content {
+    display: block;
+    animation-name: show-content;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* ================================================================================
+Wordpress-specific
+================================================================================ */
+
+.blog-post-multi {
+    width: 95%;
+    margin-top: 2em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #666;
+}
+
+.meta-date {
+    font-style: italic;
+}
+
+.meta-header {
+    font-weight: bold;
+}
+
+.post-content {
+    margin: 2em 1em 1em 1em;
+}
+
+.page-nav {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.page-nav .nav-previous, .page-nav .nav-next {
+    display: inline-block;
+}
+
+.continue-reading {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.gamebox {
+    grid-template-columns: max-content auto !important;
+    margin-top: 1em;
+}
+
+.gamebox .wp-block-media-text__media img {
+    max-width: 200px;
+}
+
+.gamebox .wp-block-media-text__content {
+    height: 100%;
+    padding-left: 1em !important;   
+}
+
+/* ================================================================================
+Animations
+================================================================================ */
+
+@keyframes show-tabs {
+    from { opacity: 0% }
+    to { opacity: 100% }
+}
+
+@keyframes show-content {
+    from { padding-top: 1.5em; opacity: 0% }
+    to { padding-top: 0; opacity: 100% }
+}
+
+@keyframes shadowbox-appear {
+    from { opacity: 0%; }
+    to { opacity: 88%; }
+}
+
+@keyframes screenshot-appear {
+    from { margin-top: 5em; opacity: 0% }
+    to { margin-top: 2em; opacity: 100% }
+}
+
+/* ================================================================================
+Blog content
+================================================================================ */
+
+.alignright {
+    float: right;
+    clear: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.aligncenter {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.wp-block-image {
+    text-align: center;
+}
+
+pre {
+    font-family: Consolas, 'Courier New', Courier, monospace;
+    margin: 1em 1em 0 1em;
+    padding: 1em;
+    background-color: #314053;
+}
+
+/* ================================================================================
+Screenshot popup
+================================================================================ */
+
+.screenshot-popup {
+    position: absolute;
+    left: 0;
+    top: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+.screenshot-shadowbox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 88%;
+    animation-name: shadowbox-appear;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.screenshot-frame {
+    display: inline-block;
+    position: relative;
+    margin: 2em;
+    animation-name: screenshot-appear;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.screenshot-frame img {
+    max-height: 80vh;
+    max-width: 80vw;
+    box-shadow: 4px 4px 8px #000;
+}
+
+.screenshot-frame .close-icon {
+    border: 1px solid #000;
+    border-radius: 12px;
+    box-shadow: 2px 2px 4px #000;
+    width: 24px;
+    height: 24px;
+    line-height: 18px;
+    font-size: 20px;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #999;
+    text-align: center;
+}
+
+.close-icon a {
+    text-decoration: none;
+    color: #000 !important;
+    padding-left: 2px;
+}
+
+/* ================================================================================
+Mobile
+================================================================================ */
+
+.mobile-header { display: none; }
+
+@media screen and (max-width: 900px) {
+    .mobile-header {
+        display: flex;
+        flex-direction: row;
+        background-color: #314053;
+        border-bottom: 1px solid #011023;
+        align-content: center;
+        align-items: center;
+    }
+
+    .hamburger-menu {
+        display: inline-block;
+        font-size: 24px;
+        color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin: 8px;
+        margin-right: 12px;
+        padding-left: 2px;
+    }
+
+    .menu-panel .logo {
+        display: none;
+    }
+
+    .mobile-header .logo {
+        /* display: inline-block; */
+        color: #fff;
+        font-size: 24px;
+    }
+
+    .main-layout {
+        display: block;
+    }
+
+    .menu-panel {
+        display: none;
+    }
+
+    .menu-panel.expanded {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 1em;
+        z-index: 1000;
+    }
+
+    .menu-panel .menu-flex {
+        margin-top: 1em;
+    }
+
+    .menu-panel .menu-flex .menu-item {
+        margin-top: 1em;
+    }
+
+    .content-panel {
+        padding: 0.5em;
+    }
+}
