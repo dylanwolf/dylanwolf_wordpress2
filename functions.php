@@ -12,6 +12,8 @@ function dylanwolf_is_active_nav_link($link_url) {
     if (str_starts_with($link_url, '/panels') && str_starts_with($url_path, '/panels')) return true;
     if (str_starts_with($link_url, '/cons') && str_starts_with($url_path, '/cons')) return true;
     if (str_starts_with($link_url, '/game-dev') && str_starts_with($url_path, '/game-dev')) return true;
+    if (str_starts_with($link_url, '/software-development') && str_starts_with($url_path, '/software-development')) return true;
+
     return false;
 }
 
@@ -23,6 +25,8 @@ function dylanwolf_get_tab_menu_name() {
     if (str_starts_with($url_path, '/panels')) return 'Tabs-Panels';
     if (str_starts_with($url_path, '/cons')) return 'Tabs-Cons';
     if (str_starts_with($url_path, '/game-dev')) return 'Tabs-GameDev';
+    if (str_starts_with($url_path, '/software-development')) return 'Tabs-SoftwareDev';
+
     return null;
 }
 

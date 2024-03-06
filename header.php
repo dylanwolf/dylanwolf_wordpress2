@@ -20,6 +20,9 @@
                 <div><a href="<?php echo get_bloginfo( 'wpurl' );?>"><img src="<?= get_theme_file_uri('images/dylanwolf-photo36.png') ?>" alt="Dylan Wolf" /></a></div>
                 <div><a href="<?php echo get_bloginfo( 'wpurl' );?>">Dylan Wolf</a></div>
             </div>
+			<div class="subhead">
+				Knoxville, TN
+			</div>
         </div>
         <div class="main-layout">
             <div class="menu-panel" id="menu" data-bind="css: { 'expanded': hamburgerOpen() }">
@@ -28,6 +31,9 @@
                         <div><a href="<?php echo get_bloginfo( 'wpurl' );?>"><img src="<?= get_theme_file_uri('images/dylanwolf-photo36.png') ?>" alt="Dylan Wolf" /></a></div>
                         <div><a href="<?php echo get_bloginfo( 'wpurl' );?>">Dylan Wolf</a></div>
                     </div>
+					<div class="subhead">
+						Knoxville, TN
+					</div>
                     <?php foreach (dylanwolf_get_menu_items('Nav-Sidebar') as $nav) { ?>
                         <div class="menu-item<?= dylanwolf_is_active_nav_link($nav->url) ? ' active' : '' ?>"><a href="<?= $nav->url ?>"><?= $nav->title ?></a></div>
                     <?php } ?>
