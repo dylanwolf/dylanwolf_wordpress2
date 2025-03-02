@@ -496,7 +496,28 @@ Mobile
 
 .mobile-header { display: none; }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-device-width: 1080px) {
+    
+    body {
+        font-size: 1.5vh;
+    }
+    
+    h1, .post-content h1 {
+        font-size: 2.75vh
+    }
+    
+    h2, .post-content h2 {
+        font-size: 2.5vh
+    }
+    
+    h3, .post-content h3 {
+        font-size: 2.25vh
+    }
+    
+    h4, .post-content h4 {
+        font-size: 2vh
+    }
+    
     .mobile-header {
         display: flex;
         flex-direction: row;
