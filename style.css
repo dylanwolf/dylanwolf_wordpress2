@@ -69,6 +69,10 @@ strong {
     font-weight: bold;
 }
 
+em {
+    font-style: italic;
+}
+
 h1, h2 {
     font-family: 'Suez One', Verdana, Geneva, Tahoma, sans-serif;
     font-size: 24px;
